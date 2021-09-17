@@ -1,0 +1,22 @@
+.footer{
+    width: 100%;
+    height: auto;
+    background-color: #e9e7e7;
+    color: #333;
+    bottom: 0;
+    position: absolute;
+    box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.text-info{
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pop-contacto{
+    cursor: pointer;
+    font-weight: 500;
+}

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="modal">
+        <form id="formulario" [formGroup]="formularioLogin">
+
+            <div class="logo-login"></div>
+
+            <h3 class="TituloModal">Iniciar Sesión</h3>
+            <div>
+                <label>Email</label>
+                <input placeholder="ejemplo@gmail.com" type="email" name="email" id="email" formControlName="email">
+                <br>
+                <label>Contraseña</label><br>
+                <input type="password" placeholder="********" id="pass" name="pass" formControlName="pass" />
+            </div>
+
+            <div class="Botones" style="margin-bottom: 20px; margin-top: 10px;">
+                <button mat-raised-button id="boton-enviar" color="basic" (click)="login()"
+                    [disabled]="formularioLogin.invalid">Iniciar sesión</button>
+            </div>
+
+        </form>
+    </div>
+</div>
