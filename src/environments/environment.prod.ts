@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  email: "ejemplo@gmail.com",
+  nombreEmpresa: "NOMBRE EMPRESA"
 };
