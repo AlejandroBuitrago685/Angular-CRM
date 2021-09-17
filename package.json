@@ -4,11 +4,10 @@
   "scripts": {
     "heroku-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start-server": "node heroku-server.js"
+    "start" : "node heroku-server.js"
   },
   "engines": {
     "node": "14.17.1",
