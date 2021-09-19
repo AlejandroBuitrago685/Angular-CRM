@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "empresa1@gmail.com",
+      "password": "1234",
+      "token": "c65ba68f08cfda9334d54f432c322cbb"
+    },
+    {
+      "id": 2,
+      "email": "empresa2@gmail.com",
+      "password": "123456",
+      "token": "500dda2bf7e85389fa65eeee8c25938a"
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Usuarios } from 'src/app/Entidades/usuarios';
+import { UsersService } from 'src/app/Servicios/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -8,22 +11,31 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  usuario: Usuarios[] = [];
+
   formularioLogin = new FormGroup({
     email: new FormControl("", Validators.required),
     pass: new FormControl('', Validators.required),
   });
 
-  email = this.formularioLogin.get("email")?.value;
-  pass = this.formularioLogin.get("pass")?.value;
 
-  constructor() { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
+    this.usersService.ObtenerUsuarioUnico("").subscribe(
+      resp => this.usuario = resp
+      
+    );
   }
 
-  login(){
-    console.log(this.formularioLogin.get("email")?.value);
-    console.log(this.formularioLogin.get("pass")?.value );
+
+  login() {
+
+    var pass = this.formularioLogin.get("pass")?.value;
+    var email = this.formularioLogin.get("email")?.value;
+
+    this.usersService.login(this.usuario, email, pass);
+
   }
 
 }

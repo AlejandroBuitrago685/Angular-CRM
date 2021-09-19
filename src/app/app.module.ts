@@ -1,5 +1,6 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { GlobalErrorService } from './Interceptores/Global-Error-Handling/global
     ReactiveFormsModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    SweetAlert2Module
+    SweetAlert2Module,
+    HttpClientModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: InterceptorPrincipal, multi: true},
     {provide: ErrorHandler, useClass: GlobalErrorService}],
