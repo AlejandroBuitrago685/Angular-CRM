@@ -7,7 +7,7 @@ import { LoginComponent } from './Paginas/login/login.component';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
-  {path: "dashboard", component: DashboardComponent, canActivate:[LoginGuard]},
+  {path: "dashboard", component: DashboardComponent}, //*, canActivate:[LoginGuard]} * //
   {path: 'error/:error', component:  GlobalErrorComponent}
 ];
 

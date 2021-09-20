@@ -90,4 +90,21 @@ rutas.put("/users/:id", (req, res) => {
     });
 });
 
+
+//*OBTENER USUARIO POR TOKEN*//
+rutas.get("/users/token/:token", function (req, res) {
+  const { token } = req.params;
+  let consulta = 'select nombre from usuarios where token = ?';
+  conexion.query(consulta, [token], (err, rows, fields) => {
+
+      if (err) {
+          throw err;
+      }
+      else {
+          res.json(rows)
+      }
+
+  })
+});
+
 module.exports = rutas;

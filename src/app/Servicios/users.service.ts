@@ -19,7 +19,7 @@ export class UsersService {
   login(usuarios:Usuarios[],email:string, pass:string){
     this.ObtenerUsuarioUnico(email).subscribe(
       resp => usuarios= resp
-      
+
     );
 
     var password = "";
@@ -67,4 +67,8 @@ export class UsersService {
     return this.http.put(this.RutaUsuarios+"/users/" + id, usuario);
   }
 
+  //Obtener nombre de usuario por token
+  ObtenerUsuarioPorToken(token:string):Observable<Usuarios[]>{
+    return this.http.get<Usuarios[]>(this.RutaUsuarios+"/users/token/" + token);
+  }
 }

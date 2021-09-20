@@ -1,27 +1,30 @@
 <mat-drawer-container class="menu-container" autosize autoFocus>
     <mat-drawer #drawer mode="side" class="contenido-menu" opened="true">
-
+      <!--<img class="bgfotomenu" src="assets\images\bgmenu.jpg"> -->
         <div style="margin-top: 150px;">
             <div class="logo"></div>
             <p class="headerMenu">{{Empresa}}</p>
+            <p class="headerUsuario">Bienvenido {{NombreUsuario}}</p>
             <hr>
         </div>
-        
+
 
         <div class="vertical-menu">
             <ul style="list-style-type: none; margin-left: -40px;">
                 <li><a class="active" id="home">Inicio</a></li>
+
                 <li><a>Enlace 1</a></li>
                 <li><a>Enlace 2</a></li>
                 <li><a>Enlace 3</a></li>
                 <li><a>Enlace 4</a></li>
             </ul>
             <li style="text-decoration-line: none; list-style: none;" (click)="logout()">
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <a><i class="material-icons">logout</i><a></a>Cerrar Sesión</a></li>
         </div>
         <app-footer></app-footer>
     </mat-drawer>
 
-    
+
 
 </mat-drawer-container>
