@@ -8,6 +8,9 @@ import { LoginComponent } from './Paginas/login/login.component';
 const routes: Routes = [
   {path: "", component: LoginComponent},
   {path: "dashboard", component: DashboardComponent}, //*, canActivate:[LoginGuard]} * //
+  {path: "empleados", component: DashboardComponent},
+  {path: "calendario", component: DashboardComponent},
+  {path: "facturacion", component: DashboardComponent},
   {path: 'error/:error', component:  GlobalErrorComponent}
 ];
 

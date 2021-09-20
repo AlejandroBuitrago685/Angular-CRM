@@ -16,6 +16,12 @@ import { InterceptorPrincipal } from './Interceptores/interceptor-principal';
 import { GlobalErrorService } from './Interceptores/Global-Error-Handling/global-error.service';
 import { DashboardComponent } from './Paginas/dashboard/dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { EncabezadoComponent } from './Componentes-Generales/encabezado/encabezado.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { LateralComponent } from './Componentes-Generales/lateral/lateral.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     LoginComponent,
     FooterComponent,
      GlobalErrorComponent,
-     DashboardComponent
+     DashboardComponent,
+     EncabezadoComponent,
+     LateralComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +42,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BrowserAnimationsModule,
     SweetAlert2Module,
     HttpClientModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatDividerModule,
+    MatBadgeModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: InterceptorPrincipal, multi: true},
     {provide: ErrorHandler, useClass: GlobalErrorService}],
