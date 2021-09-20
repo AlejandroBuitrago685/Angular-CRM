@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuarios } from 'src/app/Entidades/usuarios';
 import { UsersService } from 'src/app/Servicios/users.service';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,7 +24,22 @@ export class DashboardComponent implements OnInit {
   }
 
   logout() {
-    sessionStorage.removeItem('token');
-    this.router.navigate(['']);
+
+    Swal.fire({
+      title: '¿Cerrar sesión?',
+      text: "¿Está seguro de que desea cerrar la sesión?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Cerrar sesión',
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        sessionStorage.removeItem("token");
+        this.router.navigate([""]);
+      }
+    })
+
   }
 }
