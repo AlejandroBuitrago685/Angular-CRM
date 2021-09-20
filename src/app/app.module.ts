@@ -14,13 +14,16 @@ import { GlobalErrorComponent } from './Paginas/global-error/global-error.compon
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorPrincipal } from './Interceptores/interceptor-principal';
 import { GlobalErrorService } from './Interceptores/Global-Error-Handling/global-error.service';
+import { DashboardComponent } from './Paginas/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     FooterComponent,
-     GlobalErrorComponent
+     GlobalErrorComponent,
+     DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { GlobalErrorService } from './Interceptores/Global-Error-Handling/global
     MatButtonModule,
     BrowserAnimationsModule,
     SweetAlert2Module,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: InterceptorPrincipal, multi: true},
     {provide: ErrorHandler, useClass: GlobalErrorService}],

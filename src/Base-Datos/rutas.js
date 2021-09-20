@@ -37,8 +37,8 @@ rutas.get("/users/:email", function (req, res) {
 
 //Añadir usuario
 rutas.post("/users", (req, res) => {
-    const { email, password, token, rol } = req.body;
-    let consulta = `insert into usuarios(email, password, token, rol) values('${email}', '${password}' , '${token}', '${rol}') `;
+    const { nombre, email, password, token, rol } = req.body;
+    let consulta = `insert into usuarios(nombre, email, password, token, rol) values('${nombre}', '${email}', '${password}' , '${token}', '${rol}') `;
     conexion.query(consulta, (err, rows, fields) => {
 
         if (err) {

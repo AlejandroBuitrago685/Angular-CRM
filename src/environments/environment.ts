@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   email: "ejemplo@gmail.com",
   nombreEmpresa: "NOMBRE EMPRESA",
+  empresa: "Mc´Donalds",
   RutaUsers: "http://localhost:3000/api"
 };
 

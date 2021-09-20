@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
@@ -12,7 +13,7 @@ export class UsersService {
 
   RutaUsuarios = environment.RutaUsers;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
 
   login(usuarios:Usuarios[],email:string, pass:string){
@@ -29,7 +30,7 @@ export class UsersService {
     }
 
     if(password == pass){
-      console.log("SUCESS LOGIN");
+      this.router.navigate(["/dashboard"]);
       sessionStorage.setItem("token", token);
     }
     else{
@@ -42,8 +43,8 @@ export class UsersService {
   }
 
   //Obtener todos los usuarios
-  ObtenerUsuarios(){
-    return this.http.get(this.RutaUsuarios + "/users");
+  ObtenerUsuarios():Observable<Usuarios[]>{
+    return this.http.get<Usuarios[]>(this.RutaUsuarios + "/users");
   }
 
   //Obtener un unico usuario
