@@ -1,0 +1,38 @@
+<div id="caja-horizontal-logreg">
+    <div id="caja-vertical-logreg">
+        <div id="caja-formulario-logreg">
+
+            <form class="formulario" [formGroup]="FormularioRegistro">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="nombre">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" formControlName="password">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Rol</mat-label>
+                    <mat-select formControlName="rol">
+                        <mat-option value="trabajador">Trabajador</mat-option>
+                        <mat-option value="cliente">Cliente</mat-option>
+                        <mat-option value="admin">Admin</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <button mat-stroked-button [disabled]="FormularioRegistro.invalid" (click)="AddEmpleado()">Añadir Empleado 
+                    <mat-icon>person_add_alt</mat-icon>
+                </button>
+                <button mat-stroked-button style="margin-top: 10px; background-color: rgb(187, 57, 57);" [mat-dialog-close]>Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>

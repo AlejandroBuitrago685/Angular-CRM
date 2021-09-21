@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { RegistroEmpleadosModalComponent } from 'src/app/Modales/registro-empleados-modal/registro-empleados-modal.component';
 import { UsersService } from 'src/app/Servicios/users.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
@@ -16,7 +18,7 @@ export class EmpleadosComponent implements OnInit {
   NombreUsuario = '';
   Ruta = this.router.url;
 
-  constructor(private router: Router, private userservice: UsersService) {}
+  constructor(private dialog: MatDialog,private router: Router, private userservice: UsersService) {}
 
  
   ngOnInit(): void {
@@ -43,6 +45,14 @@ export class EmpleadosComponent implements OnInit {
       }
     })
 
+  }
 
+  AbrirRegistro(){
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(RegistroEmpleadosModalComponent, dialogConfig);
+    //console.log(palabra); 
   }
 }

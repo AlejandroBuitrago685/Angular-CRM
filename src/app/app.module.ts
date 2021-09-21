@@ -23,6 +23,12 @@ import { LateralComponent } from './Componentes-Generales/lateral/lateral.compon
 import {MatDividerModule} from '@angular/material/divider';
 import {MatBadgeModule} from '@angular/material/badge';
 import { EmpleadosComponent } from './Paginas/empleados/empleados.component';
+import { RegistroEmpleadosModalComponent } from './Modales/registro-empleados-modal/registro-empleados-modal.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -33,7 +39,8 @@ import { EmpleadosComponent } from './Paginas/empleados/empleados.component';
      DashboardComponent,
      EncabezadoComponent,
      LateralComponent,
-     EmpleadosComponent
+     EmpleadosComponent,
+     RegistroEmpleadosModalComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,12 @@ import { EmpleadosComponent } from './Paginas/empleados/empleados.component';
     MatToolbarModule,
     MatIconModule,
     MatDividerModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: InterceptorPrincipal, multi: true},
     {provide: ErrorHandler, useClass: GlobalErrorService}],

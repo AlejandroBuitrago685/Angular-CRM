@@ -1,0 +1,43 @@
+#caja-horizontal-logreg{
+    width: fill;
+    height: fill;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#caja-vertical-logreg{
+    width: fit-content;
+    height: fill;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#caja-formulario-logreg{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    margin: 50px;
+    padding:20px;
+    border:2px solid;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    padding-top:20px;
+}
+.formulario button{
+    height: 60px;
+    border:2px solid;
+}
+
+::ng-deep.mat-dialog-container {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+
+
