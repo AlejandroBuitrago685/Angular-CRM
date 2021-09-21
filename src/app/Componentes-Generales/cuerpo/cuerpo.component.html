@@ -1,0 +1,8 @@
+<div id="caja-cuerpo">
+    <div [ngSwitch]="Ruta">
+        <!-- the same view can be shown in more than one case -->
+        <app-dashboard *ngSwitchCase="'/dashboard'"></app-dashboard>
+        <app-empleados *ngSwitchCase="'/empleados'"></app-empleados>
+        <p *ngSwitchDefault>default</p>
+    </div>
+</div>

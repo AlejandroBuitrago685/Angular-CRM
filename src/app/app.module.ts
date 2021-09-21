@@ -29,6 +29,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { CuerpoComponent } from './Componentes-Generales/cuerpo/cuerpo.component';
+import { RaizComponent } from './Paginas/raiz/raiz.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { MatFormFieldModule } from "@angular/material/form-field";
      EncabezadoComponent,
      LateralComponent,
      EmpleadosComponent,
-     RegistroEmpleadosModalComponent
+     RegistroEmpleadosModalComponent,
+     CuerpoComponent,
+     RaizComponent
   ],
   imports: [
     BrowserModule,

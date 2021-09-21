@@ -1,0 +1,9 @@
+#caja-cuerpo{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding:10px;
+    height: fill;
+    width: fill;
+    background-color: gray;
+}

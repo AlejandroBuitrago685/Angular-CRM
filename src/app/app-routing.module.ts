@@ -5,13 +5,18 @@ import { DashboardComponent } from './Paginas/dashboard/dashboard.component';
 import { EmpleadosComponent } from './Paginas/empleados/empleados.component';
 import { GlobalErrorComponent } from './Paginas/global-error/global-error.component';
 import { LoginComponent } from './Paginas/login/login.component';
+import { RaizComponent } from './Paginas/raiz/raiz.component';
+import { GeneralResResolver } from './resolvers/general-res.resolver';
 
 const routes: Routes = [
-  {path: "", component: LoginComponent},
-  {path: "dashboard", component: DashboardComponent}, //*, canActivate:[LoginGuard]} * //
-  {path: "empleados", component: EmpleadosComponent},
-  {path: "calendario", component: DashboardComponent},
-  {path: "facturacion", component: DashboardComponent},
+  {path: "", component: RaizComponent, resolve:{users: GeneralResResolver},
+    children:[
+      {path: "dashboard", component: DashboardComponent}, //*, canActivate:[LoginGuard]} * //
+      {path: "empleados", component: EmpleadosComponent},
+      {path: "calendario", component: DashboardComponent},
+      {path: "facturacion", component: DashboardComponent}
+    ]},
+  {path: "login", component: LoginComponent},
   {path: 'error/:error', component:  GlobalErrorComponent}
 ];
 

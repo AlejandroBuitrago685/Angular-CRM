@@ -10,20 +10,29 @@ import Swal from 'sweetalert2';
   styleUrls: ['./lateral.component.css']
 })
 export class LateralComponent implements OnInit {
-
+  static nombreprueba="";
   Empresa = environment.empresa;
   token = sessionStorage.getItem('token') || '';
-  NombreUsuario = '';
+  NombreUsuario = 'Cargando...';
   Ruta = this.router.url;
 
-  constructor(private router: Router, private userservice: UsersService) {}
+  constructor(private router: Router, private userservice: UsersService) {
+    
+  }
 
  
   ngOnInit(): void {
     this.userservice.ObtenerUsuarioPorToken(this.token).subscribe((resp) => {
       this.NombreUsuario = resp[0].nombre;
+      LateralComponent.nombreprueba=this.NombreUsuario;
     });
+    
   }
+
+  get staticNombrePrueba() {
+    return LateralComponent.nombreprueba;
+  }
+
 
   logout() {
 
@@ -39,9 +48,10 @@ export class LateralComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         sessionStorage.removeItem("token");
-        this.router.navigate([""]);
+        this.router.navigate(["/login"]);
       }
     })
 
   }
+
 }

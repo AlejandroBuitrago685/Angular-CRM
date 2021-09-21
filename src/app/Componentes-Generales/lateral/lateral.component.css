@@ -1,11 +1,3 @@
-#caja{
-    height: fill;
-    width: fill;
-}
-#caja-pricipal {
-    background-color: transparent;
-}
-
 #caja-lateral{
     display: flex;
     flex-direction: column;

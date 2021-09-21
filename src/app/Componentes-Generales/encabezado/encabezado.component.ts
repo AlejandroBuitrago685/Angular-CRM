@@ -9,8 +9,6 @@ import { LateralComponent } from '../lateral/lateral.component';
 })
 export class EncabezadoComponent implements OnInit {
 
-  @Input()  drawer:MatDrawer;
-
   constructor() { 
   }
 
