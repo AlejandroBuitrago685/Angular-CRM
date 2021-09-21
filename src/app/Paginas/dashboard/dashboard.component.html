@@ -1,3 +1,43 @@
-<div id="dashboard">
-    <app-lateral></app-lateral>
-</div>
+<mat-sidenav-container id="caja" fullscreen>
+    <mat-sidenav #drawer mode="side" id="caja-lateral" opened="true" >
+        <div id="caja-logo">
+          <img id="logo" src="../../../assets/images/mclogo.jpg"/>
+          <label class="empresa">{{Empresa}}</label>
+          <label class="texto">Bienvenido</label>
+          <label class="usuario">{{NombreUsuario}}</label>
+        </div>
+        
+        <mat-divider></mat-divider>
+
+        <div id="caja-botones">
+
+          <button mat-stroked-button routerLinkActive="activo" routerLink="/dashboard">
+            <mat-icon>home</mat-icon><label>Inicio</label>
+          </button>
+          <button mat-stroked-button routerLinkActive="activo" routerLink="/empleados">
+            <mat-icon>group</mat-icon><label>Empleados</label>
+          </button>
+          <button mat-stroked-button routerLinkActive="activo" routerLink="/calendario">
+            <mat-icon>today</mat-icon><label>Calendario</label>
+          </button>
+          <button mat-stroked-button routerLinkActive="activo" routerLink="/facturacion">
+            <mat-icon>fact_check</mat-icon><label>Facturación</label>
+          </button>
+
+        </div>
+          
+        <button mat-stroked-button id="boton-logout" (click)="logout()" color="warn">
+          <mat-icon>logout</mat-icon><label>Cerrar sesión</label>
+        </button>
+
+    </mat-sidenav>
+    
+    <mat-sidenav-content id="caja-principal">
+      
+      <app-encabezado [drawer]="drawer"></app-encabezado>
+      Esto es el dashboard
+      <app-footer></app-footer>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

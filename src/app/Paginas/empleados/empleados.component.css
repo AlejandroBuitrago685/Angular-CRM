@@ -1,21 +1,6 @@
-#empleados{
-    display: flex;
-    width: 100%;
-    height: fill;
-}
-
-#encabezado{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 #caja{
     height: fill;
     width: fill;
-}
-#caja-pricipal {
-    background-color: transparent;
 }
 
 #caja-lateral{

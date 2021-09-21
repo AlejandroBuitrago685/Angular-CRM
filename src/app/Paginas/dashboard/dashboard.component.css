@@ -1,5 +1,88 @@
-#dashboard{
-    display: flex;
-    width: 100%;
+#caja{
     height: fill;
+    width: fill;
+}
+
+#caja-lateral{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding:10px;
+    height: fill;
+    overflow: hidden;
+}
+
+    #caja-logo {
+        display: flex;
+        flex-direction: column;
+        width: fill;
+        height: fit-content;
+        padding: 10px;
+
+    }
+        
+        #logo{
+            display: flex;
+            align-self: center;
+            width: 100px;
+            border-radius: 50%;
+        }
+        #caja-logo label{
+            align-self: center;
+        }
+
+
+    #caja-botones {
+        display: flex;
+        flex-direction: column;
+        width: fill;
+        height: fill;
+    }
+        #caja-botones button{
+            width: fill;        
+            flex-direction: row;        
+            justify-content: start;
+            margin-top:10px;
+            height: fit-content;
+        }
+            #caja-botones button mat-icon{
+                display: inline;
+                height: fill;
+                justify-self: start;
+            }
+            #caja-botones button label{
+                display: inline;
+                height: fill;
+                line-height: fill;
+                width: fill;
+                justify-self: flex-end;
+                padding:10px;
+            }
+
+            #boton-logout{
+                display: flex;
+                width: fill;        
+                align-self: flex-end;
+                flex-direction: row;       
+                height: fit-content;
+            }
+
+
+.texto{
+    font-size:12px;
+}
+
+.empresa{
+    font-size:16px;
+    font-weight: bold;
+    padding:10px;
+}
+.usuario{
+    font-weight: bold;
+}
+
+
+.activo{
+    background-color:gray;
+    color: white;
 }
