@@ -1,3 +1,15 @@
+#empleados{
+    display: flex;
+    width: 100%;
+    height: fill;
+}
+
+#encabezado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #caja{
     height: fill;
     width: fill;
@@ -71,20 +83,6 @@
             }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .texto{
     font-size:12px;
 }
@@ -97,17 +95,6 @@
 .usuario{
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 .activo{

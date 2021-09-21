@@ -22,6 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { LateralComponent } from './Componentes-Generales/lateral/lateral.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatBadgeModule} from '@angular/material/badge';
+import { EmpleadosComponent } from './Paginas/empleados/empleados.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {MatBadgeModule} from '@angular/material/badge';
      GlobalErrorComponent,
      DashboardComponent,
      EncabezadoComponent,
-     LateralComponent
+     LateralComponent,
+     EmpleadosComponent
   ],
   imports: [
     BrowserModule,

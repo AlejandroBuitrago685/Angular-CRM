@@ -5,11 +5,11 @@ import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-lateral',
-  templateUrl: './lateral.component.html',
-  styleUrls: ['./lateral.component.css']
+  selector: 'app-empleados',
+  templateUrl: './empleados.component.html',
+  styleUrls: ['./empleados.component.css']
 })
-export class LateralComponent implements OnInit {
+export class EmpleadosComponent implements OnInit {
 
   Empresa = environment.empresa;
   token = sessionStorage.getItem('token') || '';
@@ -42,6 +42,7 @@ export class LateralComponent implements OnInit {
         this.router.navigate([""]);
       }
     })
+
 
   }
 }

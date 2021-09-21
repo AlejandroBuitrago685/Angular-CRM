@@ -1,3 +1,16 @@
+<mat-toolbar id="encabezado" >
+    <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <button id="boton-notificacion" mat-icon-button >
+        <mat-icon matBadge="3" matBadgeColor="warn"> notifications</mat-icon>
+    </button>
+
+
+</mat-toolbar>
+
+
 <mat-sidenav-container id="caja" fullscreen>
     <mat-sidenav #drawer mode="side" id="caja-lateral" opened="true" >
       <!--<img class="bgfotomenu" src="assets\images\bgmenu.jpg"> -->
@@ -36,8 +49,11 @@
     <mat-sidenav-content id="caja-principal">
       
       <app-encabezado [drawer]="drawer"></app-encabezado>
+      Esto es empleados
       <app-footer></app-footer>
 
     </mat-sidenav-content>
 
 </mat-sidenav-container>
+
+
