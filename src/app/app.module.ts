@@ -31,6 +31,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { CuerpoComponent } from './Componentes-Generales/cuerpo/cuerpo.component';
 import { RaizComponent } from './Paginas/raiz/raiz.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { EmpleadoModelComponent } from './Modales/empleado-model/empleado-model.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -44,7 +51,8 @@ import { RaizComponent } from './Paginas/raiz/raiz.component';
      EmpleadosComponent,
      RegistroEmpleadosModalComponent,
      CuerpoComponent,
-     RaizComponent
+     RaizComponent,
+     EmpleadoModelComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +72,13 @@ import { RaizComponent } from './Paginas/raiz/raiz.component';
     MatTabsModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgxPaginationModule,
+    MatCardModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: InterceptorPrincipal, multi: true},
     {provide: ErrorHandler, useClass: GlobalErrorService}],

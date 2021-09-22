@@ -9,7 +9,7 @@ import { RaizComponent } from './Paginas/raiz/raiz.component';
 import { GeneralResResolver } from './resolvers/general-res.resolver';
 
 const routes: Routes = [
-  {path: "", component: RaizComponent, resolve:{users: GeneralResResolver},
+  {path: "", component: RaizComponent, resolve:{users: GeneralResResolver}, /*canActivate:[LoginGuard]*/
     children:[
       {path: "dashboard", component: DashboardComponent}, //*, canActivate:[LoginGuard]} * //
       {path: "empleados", component: EmpleadosComponent},

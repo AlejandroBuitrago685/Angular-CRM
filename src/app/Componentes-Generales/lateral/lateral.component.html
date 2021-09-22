@@ -12,16 +12,16 @@
 
   <div id="caja-botones">
 
-    <button mat-stroked-button routerLinkActive="activo" routerLink="/dashboard">
+    <button mat-stroked-button routerLinkActive="activo" routerLink="/dashboard" #tooltip="matTooltip" matTooltip="Resumen" matTooltipPosition="right">
       <mat-icon>home</mat-icon><label>Inicio</label>
     </button>
-    <button mat-stroked-button routerLinkActive="activo" routerLink="/empleados">
+    <button mat-stroked-button routerLinkActive="activo" routerLink="/empleados" #tooltip="matTooltip" matTooltip="Gestión de empleados" matTooltipPosition="right">
       <mat-icon>group</mat-icon><label>Empleados</label>
     </button>
-    <button mat-stroked-button routerLinkActive="activo" routerLink="/calendario">
+    <button mat-stroked-button routerLinkActive="activo" routerLink="/calendario" #tooltip="matTooltip" matTooltip="Eventos próximos" matTooltipPosition="right">
       <mat-icon>today</mat-icon><label>Calendario</label>
     </button>
-    <button mat-stroked-button routerLinkActive="activo" routerLink="/facturacion">
+    <button mat-stroked-button routerLinkActive="activo" routerLink="/facturacion" #tooltip="matTooltip" matTooltip="Gestión de facturas" matTooltipPosition="right">
       <mat-icon>fact_check</mat-icon><label>Facturación</label>
     </button>
 
