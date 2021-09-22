@@ -1,15 +1,4 @@
-.empleados{
-    width: 100%;
-    height: 100%;
-}
 
-.listado{
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    justify-content: center;
-}
 
 .card {
     border-radius: .5rem;
@@ -18,8 +7,9 @@
     color: #191b1f;
     padding: 15px;
     text-align: center;
-    margin: .5rem;
-    width: 200px;
+    width: fill;
+    margin-top:20px;
+    margin-left:20px;
     max-width: 14.25rem;
     height: auto;
     max-height: auto;
@@ -30,7 +20,6 @@
       border-radius: 50%;
       width: 80px;
       height: 80px;
-      box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.14);
   }
 
 .chips{

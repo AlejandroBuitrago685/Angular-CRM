@@ -11,6 +11,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+
+
   Empresa = environment.empresa;
   token = sessionStorage.getItem('token') || '';
   NombreUsuario = '';

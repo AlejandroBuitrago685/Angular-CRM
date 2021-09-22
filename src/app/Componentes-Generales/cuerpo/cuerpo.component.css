@@ -2,7 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding:10px;
+    height: fill;
+    width: fill;
+}
+#caja-cuerpo div app-dashboard, #caja-cuerpo div app-empleados{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     height: fill;
     width: fill;
 }

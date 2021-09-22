@@ -4,6 +4,16 @@
       <mat-icon>person_add</mat-icon><label> Nuevo empleado</label>
     </button>
   </div>
-
-  <app-empleado-model></app-empleado-model>
 </div>
+<div id="caja-empleados" >
+  <div *ngFor="let empleados of users | paginate: { itemsPerPage: 10, currentPage: page } ">
+    <app-empleado-model ></app-empleado-model>
+  </div>
+</div>
+
+
+<pagination-controls class="pagination"
+(pageChange)="page = $event"
+previousLabel="<"
+nextLabel=">">
+</pagination-controls>

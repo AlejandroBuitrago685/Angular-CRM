@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Usuarios } from 'src/app/Entidades/usuarios';
 import { RegistroEmpleadosModalComponent } from 'src/app/Modales/registro-empleados-modal/registro-empleados-modal.component';
 import { UsersService } from 'src/app/Servicios/users.service';
 import { environment } from 'src/environments/environment';
@@ -17,6 +18,8 @@ export class EmpleadosComponent implements OnInit {
   token = sessionStorage.getItem('token') || '';
   NombreUsuario = '';
   Ruta = this.router.url;
+  users:Usuarios[] = [];
+  public page:number;
 
   constructor(private dialog: MatDialog,private router: Router, private userservice: UsersService) {}
 
@@ -25,6 +28,10 @@ export class EmpleadosComponent implements OnInit {
     this.userservice.ObtenerUsuarioPorToken(this.token).subscribe((resp) => {
       this.NombreUsuario = resp[0].nombre;
     });
+
+    this.userservice.ObtenerUsuarios().subscribe(
+      resp => this.users = resp
+    )
   }
 
   logout() {

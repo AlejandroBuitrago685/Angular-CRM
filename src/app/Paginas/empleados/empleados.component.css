@@ -5,3 +5,28 @@
     padding: 10px;
     background-color: #e9e7e7;
 }
+
+.pagination /deep/ .ngx-pagination li{
+    border-radius: 50%;
+    padding: 5px 10px;
+    justify-content: center;
+}
+.pagination /deep/ .ngx-pagination .current{
+    background-color:gray;
+}
+.pagination /deep/ .ngx-pagination li a {
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
+#caja-empleados{
+    display: flex;
+    flex-wrap: wrap;
+    width: fill;
+    height: fill;
+    justify-content: stretch;
+    overflow: hidden;
+}
+#caja-empleados app-empleado-model{
+    width:33%;
+}
