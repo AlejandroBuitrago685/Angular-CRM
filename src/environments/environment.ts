@@ -7,7 +7,8 @@ export const environment = {
   email: "ejemplo@gmail.com",
   nombreEmpresa: "NOMBRE EMPRESA",
   empresa: "Mc´Donalds",
-  RutaUsers: "http://localhost:3000/api"
+  RutaUsers: "http://localhost:3000/api",
+  RutaEmpleados: "http://localhost:3000/api/empleados"
 };
 
 /*

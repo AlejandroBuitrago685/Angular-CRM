@@ -24,8 +24,9 @@
     flex-wrap: wrap;
     width: fill;
     height: fill;
-    justify-content: stretch;
+    justify-content: center;
     overflow: hidden;
+    padding-bottom: 10px;
 }
 #caja-empleados app-empleado-model{
     width:33%;

@@ -107,4 +107,37 @@ rutas.get("/users/token/:token", function (req, res) {
   })
 });
 
+//----------------------------------EMPLEADOS----------------------------------------------------
+//Obtener todos los empleados
+rutas.get("/empleados/all", function (req, res) {
+    let consulta = 'select * from empleados';
+    conexion.query(consulta, (err, rows, fields) => {
+
+        if (err) {
+            throw err;
+        }
+        else {
+            res.json(rows)
+        }
+
+    })
+});
+
+//Añadir empleado
+rutas.post("/empleados/add", (req, res) => {
+    const { nombre, apellidos, email, telefono, dni, fecha_alta, calle, localidad, cp, provincia, departamentos } = req.body;
+    let consulta = `insert into empleados(nombre, apellidos, email, telefono, dni, fecha_alta, calle, localidad, cp, provincia, departamentos_id) values('${nombre}', '${apellidos}', '${email}', '${telefono}' , '${dni}', '${fecha_alta}', '${calle}', '${localidad}', '${cp}', '${provincia}', '${departamentos}') `;
+    conexion.query(consulta, (err, rows, fields) => {
+
+        if (err) {
+            throw err;
+        }
+        else {
+            res.json({ status: "Empleado creado" });
+        }
+
+    });
+});
+
+
 module.exports = rutas;
