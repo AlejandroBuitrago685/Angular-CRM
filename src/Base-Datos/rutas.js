@@ -139,5 +139,54 @@ rutas.post("/empleados/add", (req, res) => {
     });
 });
 
+//Eliminar empleado
+rutas.delete("/empleados/delete/:email", (req, res) => {
+  const { email } = req.params
+  let consulta = `delete from empleados where email = '${email}'`
+  conexion.query(consulta, (err, rows, fields) => {
+
+      if (err) {
+          throw err;
+      }
+      else {
+          res.json({ status: "Empleado eliminado" });
+      }
+
+  });
+});
+
+//Modificar empleados por id
+rutas.put("/empleados/modify/:id", (req, res) => {
+  const { id } = req.params;
+  const { nombre, apellidos, email, telefono, dni, fecha_alta, calle, localidad, cp, provincia, departamentos } = req.body;
+  let consulta = `update empleados set
+  nombre='${nombre}',
+  apellidos='${apellidos}',
+  email='${email}',
+  telefono='${telefono}',
+  dni='${dni}',
+  fecha_alta='${fecha_alta}',
+  calle='${calle}',
+  localidad='${localidad}',
+  cp='${cp}',
+  provincia='${provincia}',
+  departamentos='${departamentos}'
+  `;
+
+
+  conexion.query(consulta, (err, rows, fields) => {
+
+      if (err) {
+          throw err;
+      }
+      else {
+          res.json({ status: "Empleado actualizado" });
+      }
+
+  });
+});
+
+
+
 
 module.exports = rutas;
