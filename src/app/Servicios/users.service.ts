@@ -22,16 +22,23 @@ export class UsersService {
 
     );
 
-    var password = "";
-    var token = "";
+    let credentials = new Map();
     for(let i in usuarios){
-      password = usuarios[i].password;
-      token = usuarios[i].token;
+      credentials.set(usuarios[i].email,usuarios[i].password);
     }
 
-    if(password == pass){
-      this.router.navigate(["/dashboard"]);
-      sessionStorage.setItem("token", token);
+
+    if(credentials.get(email) != undefined && pass == credentials.get(email)){
+      
+      this.ObtenerUsuarioUnico(email).subscribe(
+        resp => {sessionStorage.setItem("token", resp[0].token), sessionStorage.setItem("nameSession", resp[0].nombre)}
+      );
+      setTimeout(() => {
+        this.router.navigate(["/dashboard"]);
+      }
+      , 100);
+      
+
     }
     else{
       Swal.fire(
@@ -41,6 +48,7 @@ export class UsersService {
       )
     }
   }
+
 
   //Obtener todos los usuarios
   ObtenerUsuarios():Observable<Usuarios[]>{

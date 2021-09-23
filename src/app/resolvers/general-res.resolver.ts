@@ -16,7 +16,8 @@ export class GeneralResResolver implements Resolve<any> {
   constructor( private DBService:UsersService){}
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.DBService.ObtenerUsuarioPorToken("").pipe(
+    var token = sessionStorage.getItem('token') || '';
+    return this.DBService.ObtenerUsuarioPorToken(token).pipe(
       catchError(error => {
           alert("Ha ocurrido un error inesperado")
           console.log(error)
