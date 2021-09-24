@@ -6,7 +6,7 @@
   </div>
 </div>
 <div id="caja-empleados" >
-  <div *ngFor="let empleados of users | paginate: { itemsPerPage: 10, currentPage: page } ">
+  <div *ngFor="let empleados of ListaEmpleados | paginate: { itemsPerPage: 10, currentPage: page } ">
     <app-empleado-model [empleado]="empleados" ></app-empleado-model>
   </div>
 </div>

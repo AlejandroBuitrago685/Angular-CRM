@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Empleado } from 'src/app/Entidades/empleado';
 import { Usuarios } from 'src/app/Entidades/usuarios';
 import { RegistroEmpleadosModalComponent } from 'src/app/Modales/registro-empleados-modal/registro-empleados-modal.component';
+import { EmpleadosService } from 'src/app/Servicios/empleados.service';
 import { UsersService } from 'src/app/Servicios/users.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
@@ -18,10 +20,10 @@ export class EmpleadosComponent implements OnInit {
   token = sessionStorage.getItem('token') || '';
   NombreUsuario = '';
   Ruta = this.router.url;
-  users:Usuarios[] = [];
+  ListaEmpleados:Empleado[] = [];
   public page:number;
 
-  constructor(private dialog: MatDialog,private router: Router, private userservice: UsersService) {}
+  constructor(private dialog: MatDialog,private router: Router, private userservice: UsersService, private empleadosService:EmpleadosService) {}
 
  
   ngOnInit(): void {
@@ -29,8 +31,8 @@ export class EmpleadosComponent implements OnInit {
       this.NombreUsuario = resp[0].nombre;
     });
 
-    this.userservice.ObtenerUsuarios().subscribe(
-      resp => this.users = resp
+    this.empleadosService.ObtenerEmpleados().subscribe(
+      resp => this.ListaEmpleados = resp
     )
   }
 
@@ -56,10 +58,8 @@ export class EmpleadosComponent implements OnInit {
 
   AbrirRegistro(){
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     this.dialog.open(RegistroEmpleadosModalComponent, dialogConfig);
-    //console.log(palabra); 
   }
 }

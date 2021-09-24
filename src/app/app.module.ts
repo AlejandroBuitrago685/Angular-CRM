@@ -38,6 +38,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DetalleEmpleadoModelComponent } from './Modales/detalle-empleado-model/detalle-empleado-model.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MatNativeDateModule } from '@angular/material/core';
      RegistroEmpleadosModalComponent,
      CuerpoComponent,
      RaizComponent,
-     EmpleadoModelComponent
+     EmpleadoModelComponent,
+     DetalleEmpleadoModelComponent
   ],
   imports: [
     BrowserModule,

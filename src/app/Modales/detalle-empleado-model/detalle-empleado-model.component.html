@@ -1,0 +1,48 @@
+<mat-card class="card" [class.mat-elevation-z4]="true">
+    <mat-card-content>
+        <mat-card-title>{{nombre}} {{apellidos}}</mat-card-title>
+        <mat-card-subtitle>Empleado desde: {{fecha}}<br>{{email}}</mat-card-subtitle>
+
+        <mat-card-content>
+            <div class="contenedor-ubicacion">
+                <div style="width: 33%; margin-left: 50px;">
+                    <label>Calle</label><br>
+                    <input matInput type="text" disabled value="{{calle}}"><br>
+                    <label>Localidad</label><br>
+                    <input matInput type="text" disabled value="{{localidad}}"><br>
+                    
+                </div>
+                    <mat-divider [vertical]="true" style="margin: 0 auto;"></mat-divider>
+                <div style="width: 33%; margin-left: 25px;">
+                    <label>Provincia</label><br>
+                    <input matInput type="text" disabled value="{{provincia}}"><br>
+                    <label>Código postal</label>
+                    <input matInput type="text" disabled value="{{cp}}"><br>
+                </div>
+                <mat-divider [vertical]="true" style="margin: 0 auto;"></mat-divider>
+                <div style="width: 33%; margin-left: 25px;">
+                    <label>Teléfono</label><br>
+                    <input matInput type="text" disabled value="{{telefono}}"><br>
+                    <label>DNI</label>
+                    <input matInput type="text" disabled value="{{dni}}"><br>
+                </div>
+                
+                
+            </div>
+
+        </mat-card-content>
+
+
+
+        <mat-divider></mat-divider>
+
+        <mat-card-footer class="footer">
+            <label>Departamentos</label>
+            <mat-chip-list class="chips">
+                <mat-chip>Frontend</mat-chip>
+                <mat-chip>Backend</mat-chip>
+                <mat-chip>Fullstack</mat-chip>
+            </mat-chip-list>
+        </mat-card-footer>
+    </mat-card-content>
+</mat-card>

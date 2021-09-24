@@ -76,7 +76,7 @@ rutas.put("/users/:id", (req, res) => {
     email='${email}',
     password='${password}',
     token='${token}',
-    rol='${rol}' `;
+    rol='${rol}' where id = '${id}'`;
 
     conexion.query(consulta, (err, rows, fields) => {
 
@@ -170,7 +170,7 @@ rutas.put("/empleados/modify/:id", (req, res) => {
   localidad='${localidad}',
   cp='${cp}',
   provincia='${provincia}',
-  departamentos='${departamentos}'
+  departamentos='${departamentos}' where id = '${id}'
   `;
 
 

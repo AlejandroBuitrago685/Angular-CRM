@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginGuard } from './Guards/login.guard';
+import { DetalleEmpleadoModelComponent } from './Modales/detalle-empleado-model/detalle-empleado-model.component';
 import { DashboardComponent } from './Paginas/dashboard/dashboard.component';
 import { EmpleadosComponent } from './Paginas/empleados/empleados.component';
 import { GlobalErrorComponent } from './Paginas/global-error/global-error.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
       {path: "facturacion", component: DashboardComponent}
     ]},
   {path: "login", component: LoginComponent},
+  {path: "test", component: DetalleEmpleadoModelComponent},
   {path: 'error/:error', component:  GlobalErrorComponent}
 ];
 
