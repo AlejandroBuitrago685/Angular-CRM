@@ -19,6 +19,10 @@ export class EmpleadosService {
     return this.http.get<Empleado[]>(this.RutaEmpleados + "/all");
   }
 
+  ObtenerDepartamentos(email:string):Observable<Empleado[]>{
+    return this.http.get<Empleado[]>(this.RutaEmpleados + "/departamentos/" + email);
+  }
+
   //Obtener un unico Empleado
   ObtenerEmpleadoUnico(email:string):Observable<Empleado[]>{
     return this.http.get<Empleado[]>(this.RutaEmpleados + "/" + email);

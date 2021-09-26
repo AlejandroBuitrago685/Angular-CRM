@@ -38,10 +38,8 @@
 
         <mat-card-footer class="footer">
             <label>Departamentos</label>
-            <mat-chip-list class="chips">
-                <mat-chip>Frontend</mat-chip>
-                <mat-chip>Backend</mat-chip>
-                <mat-chip>Fullstack</mat-chip>
+            <mat-chip-list class="chips" *ngFor= "let ListaDepartamentos of departamentos">
+                <mat-chip>{{departamentos}}</mat-chip>
             </mat-chip-list>
         </mat-card-footer>
     </mat-card-content>

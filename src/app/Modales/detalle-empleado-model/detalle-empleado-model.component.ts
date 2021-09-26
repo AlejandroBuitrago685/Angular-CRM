@@ -21,6 +21,7 @@ export class DetalleEmpleadoModelComponent implements OnInit {
   provincia = this.data.provincia;
   fecha = this.data.fecha_alta;
   cp = this.data.cp;
+  departamentos = this.data.departamentos;
 
   ngOnInit(): void {
   }

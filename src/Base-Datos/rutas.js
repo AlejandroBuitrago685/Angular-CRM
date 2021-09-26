@@ -187,6 +187,23 @@ rutas.put("/empleados/modify/:id", (req, res) => {
 });
 
 
+//Obtener departamentos de empleados
+rutas.get("/empleados/departamentos/:id", function (req, res) {
+    const { id } = req.params;
+    let consulta = `select departamentos from empleados where id = '${id}' `;
+    conexion.query(consulta, [id] , (err, rows, fields) => {
+
+        if (err) {
+            throw err;
+        }
+        else {
+            res.json(rows)
+        }
+
+    })
+});
+
+
 
 
 module.exports = rutas;

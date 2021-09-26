@@ -3,7 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import * as moment from 'moment';
 import { Empleado } from 'src/app/Entidades/empleado';
 import { Usuarios } from 'src/app/Entidades/usuarios';
-import { UsersService } from 'src/app/Servicios/users.service';
+import { EmpleadosService } from 'src/app/Servicios/empleados.service';
 import { DetalleEmpleadoModelComponent } from '../detalle-empleado-model/detalle-empleado-model.component';
 
 @Component({
@@ -16,9 +16,21 @@ export class EmpleadoModelComponent implements OnInit {
   @Input()
   empleado: Empleado = new Empleado();
 
-  constructor(private dialog: MatDialog) { }
+  fechaFormateada = ""
+  departamentos:Empleado[] = []
+  
+
+  constructor(private dialog: MatDialog, private EmpleadoService:EmpleadosService) { }
 
   ngOnInit(): void {
+    this.fechaFormateada = moment(this.empleado.fecha_alta).format("L");
+
+
+    this.EmpleadoService.ObtenerDepartamentos(this.empleado.id).subscribe(
+      resp => this.departamentos = resp
+      
+    );
+    
   }
 
   AbrirDetalle(){
@@ -31,13 +43,14 @@ export class EmpleadoModelComponent implements OnInit {
       nombre : this.empleado.nombre,
       apellidos : this.empleado.apellidos,
       email : this.empleado.email,
-      fecha_alta : this.empleado.fecha_alta,
+      fecha_alta : this.fechaFormateada,
       calle : this.empleado.calle,
       localidad : this.empleado.localidad,
       provincia : this.empleado.provincia,
       cp : this.empleado.cp,
       telefono : this.empleado.telefono,
-      dni : this.empleado.dni
+      dni : this.empleado.dni,
+      departamentos : this.departamentos
     }
     this.dialog.open(DetalleEmpleadoModelComponent, dialogConfig);
     //console.log(palabra); 
