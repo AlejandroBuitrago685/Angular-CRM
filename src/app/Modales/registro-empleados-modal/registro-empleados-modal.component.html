@@ -1,4 +1,4 @@
-<div class="contenedor">
+<div class="contenedor" [class.mat-elevation-z4]="true">
     <h3 class="titulo-from" style="text-align: center; margin-bottom: 20px; font-weight: 500">
         Nuevo empleado
       </h3>
@@ -33,7 +33,7 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Fecha de alta</mat-label>
-      <input matInput [matDatepicker]="datepicker" />
+      <input matInput [matDatepicker]="datepicker" formControlName="fecha_alta" />
       <mat-datepicker-toggle
         matSuffix
         [for]="datepicker"
@@ -77,26 +77,29 @@
     </mat-form-field>
   </div>
 
+  <button
+      mat-stroked-button
+      [disabled]="FormularioRegistro.invalid"
+      (click)="AddEmpleado()"
+    >
+      Añadir Empleado
+      <mat-icon>person_add_alt</mat-icon>
+    </button>
 
+  
 
 
 </form>
 
 <div class="botones-form">
-  <button
-    mat-stroked-button
-    [disabled]="FormularioRegistro.invalid"
-    (click)="AddEmpleado()"
-  >
-    Añadir Empleado
-    <mat-icon>person_add_alt</mat-icon>
-  </button>
-  <button
-    mat-stroked-button
-    style="margin-top: 30px; background-color: rgb(187, 57, 57);margin-left: 20px;"
-    [mat-dialog-close]
-  >
-    Cancelar
-  </button>
-</div>
+    
+    <button
+      mat-stroked-button
+      style="margin-top: 30px; background-color: rgb(187, 57, 57);margin-left: 20px;"
+      [mat-dialog-close]
+    >
+      Cancelar
+    </button>
+  </div>
+
 </div>

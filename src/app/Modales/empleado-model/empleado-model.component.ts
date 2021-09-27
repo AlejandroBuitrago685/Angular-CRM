@@ -36,7 +36,7 @@ export class EmpleadoModelComponent implements OnInit {
        }
       }
     );
-
+  
 
   }
 
@@ -57,7 +57,7 @@ export class EmpleadoModelComponent implements OnInit {
       cp : this.empleado.cp,
       telefono : this.empleado.telefono,
       dni : this.empleado.dni,
-      departamentos : this.departamentos
+      departamentos : this.nombreDepartamentos
     }
     this.dialog.open(DetalleEmpleadoModelComponent, dialogConfig);
     //console.log(palabra);

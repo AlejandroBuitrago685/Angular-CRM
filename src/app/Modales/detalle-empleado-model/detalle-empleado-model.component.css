@@ -18,12 +18,10 @@
 }
 
 .chips{
-    margin: 0;
-    font-size: 10px;
-    text-overflow: ellipsis;
-    width: 100%;
+    display: inline-flex;
     overflow: hidden;
-    white-space: nowrap;
+    left: 0;
+    padding: 5px;
 }
 p {
     display: block;

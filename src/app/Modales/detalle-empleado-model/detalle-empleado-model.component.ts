@@ -9,7 +9,7 @@ import { Empleado } from 'src/app/Entidades/empleado';
 })
 export class DetalleEmpleadoModelComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Empleado) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Empleado, @Inject(MAT_DIALOG_DATA) public data2:any ) { }
 
   nombre = this.data.nombre;
   apellidos = this.data.apellidos;
@@ -21,7 +21,7 @@ export class DetalleEmpleadoModelComponent implements OnInit {
   provincia = this.data.provincia;
   fecha = this.data.fecha_alta;
   cp = this.data.cp;
-  departamentos = this.data.departamentos_id;
+  departamentos = this.data2.departamentos;
 
   ngOnInit(): void {
   }
