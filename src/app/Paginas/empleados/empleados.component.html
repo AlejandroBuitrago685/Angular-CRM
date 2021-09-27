@@ -1,13 +1,33 @@
-
-<div id="caja-empleados" >
-  <div *ngFor="let empleados of ListaEmpleados | paginate: { itemsPerPage: 10, currentPage: page } ">
-    <app-empleado-model [empleado]="empleados" ></app-empleado-model>
+<ng-container *ngIf="ListaEmpleados.length !=0; else empleadosEmpty">
+  <div id="caja-empleados">
+    <div *ngFor="let empleados of ListaEmpleados | paginate: { itemsPerPage: 10, currentPage: page } ">
+      <app-empleado-model [empleado]="empleados"></app-empleado-model>
+    </div>
   </div>
-</div>
+</ng-container>
+
+<ng-template #empleadosEmpty>
+  <div style="margin-top: 100px;">
+    <div class="caja-info">
+      <div>
+        <div>
+          <label style="font-weight: 600; display: flex; justify-content: center;">¡OOPS!</label>
+        </div>
+
+        <hr style="margin-top: 10px">
+        <label style="padding: 10px;">Aún no se ha agregado ningún empleado.<br>Puedes añadir uno a través del botón del menú supeior o directamente desde aquí.</label><br>
+        <img src="https://image.flaticon.com/icons/png/512/752/752755.png" width="50px" style="padding: 10px;" />
+        <br>
+
+        <label>Añadir empleado</label>
+        <app-btn-anadir-empleado></app-btn-anadir-empleado>
+        
+      </div>
+    </div>
+  </div>
+</ng-template>
 
 
-<pagination-controls *ngIf="ListaEmpleados.length > 10" class="pagination"
-(pageChange)="page = $event"
-previousLabel="<"
-nextLabel=">">
+<pagination-controls *ngIf="ListaEmpleados.length > 10" class="pagination" (pageChange)="page = $event"
+  previousLabel="<" nextLabel=">">
 </pagination-controls>

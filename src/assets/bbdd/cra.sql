@@ -116,7 +116,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`, `token`, `rol`) VALUES
-(1, 'Alejandro Buitrago', 'alejandro@cra.es', '1234321', 'sdav123vsdav43v', 'admin'),
+(1, 'Alejandro Buitrago', 'alejandro@cra.es', '1234', 'sdav123vsdav43v', 'admin'),
 (2, 'Andrei Grigorita', 'andrei@cra.es', '321123', '123basda4b451ad', 'admin');
 
 --
