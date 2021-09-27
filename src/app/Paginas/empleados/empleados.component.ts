@@ -25,7 +25,7 @@ export class EmpleadosComponent implements OnInit {
 
   constructor(private dialog: MatDialog,private router: Router, private userservice: UsersService, private empleadosService:EmpleadosService) {}
 
- 
+
   ngOnInit(): void {
     this.userservice.ObtenerUsuarioPorToken(this.token).subscribe((resp) => {
       this.NombreUsuario = resp[0].nombre;
@@ -62,4 +62,6 @@ export class EmpleadosComponent implements OnInit {
     dialogConfig.autoFocus = true;
     this.dialog.open(RegistroEmpleadosModalComponent, dialogConfig);
   }
+
+
 }

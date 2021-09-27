@@ -1,7 +1,7 @@
 <div>
   <div class="opciones-empleados">
     <button mat-stroked-button (click)="AbrirRegistro()">
-      <mat-icon>person_add</mat-icon><label> Nuevo empleado</label>
+      <mat-icon>person_add_alt</mat-icon><label> Nuevo empleado</label>
     </button>
   </div>
 </div>
@@ -12,7 +12,7 @@
 </div>
 
 
-<pagination-controls class="pagination"
+<pagination-controls *ngIf="ListaEmpleados.length > 10" class="pagination"
 (pageChange)="page = $event"
 previousLabel="<"
 nextLabel=">">

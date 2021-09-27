@@ -1,53 +1,102 @@
-<div id="caja-horizontal-logreg">
-    <div id="caja-vertical-logreg">
-        <div id="caja-formulario-logreg">
+<div class="contenedor">
+    <h3 class="titulo-from" style="text-align: center; margin-bottom: 20px; font-weight: 500">
+        Nuevo empleado
+      </h3>
+<form class="formulario" [formGroup]="FormularioRegistro">
+  <div class="caja1">
+
+      <h3>Datos Personales</h3>
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Apellidos</mat-label>
+      <input matInput formControlName="apellidos" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Telefono</mat-label>
+      <input matInput type="tel" formControlName="telefono" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Dni</mat-label>
+      <input matInput type="text" formControlName="dni" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha de alta</mat-label>
+      <input matInput [matDatepicker]="datepicker" />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="datepicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #datepicker>
+        <mat-datepicker-actions>
+          <button mat-button matDatepickerCancel>Cancelar</button>
+          <button mat-raised-button color="primary" matDatepickerApply>
+            Aceptar
+          </button>
+        </mat-datepicker-actions>
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+  <mat-divider style="margin-left:40px;" [inset]="true" [vertical]="true"></mat-divider>
+  <div class="caja2">
+    <h3>Direccion</h3>
+    <mat-form-field appearance="outline">
+      <mat-label>Calle</mat-label>
+      <input matInput type="text" formControlName="calle" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Localidad</mat-label>
+      <input matInput type="text" formControlName="localidad" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Codigo Postal</mat-label>
+      <input matInput type="number" formControlName="cp" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Provincia</mat-label>
+      <input matInput type="text" formControlName="provincia" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Departamentos</mat-label>
+      <input matInput type="text" formControlName="departamentos_id" />
+    </mat-form-field>
+  </div>
 
 
-            <form class="formulario" [formGroup]="FormularioRegistro">
 
-                <h3 style="text-align: center; margin-bottom: 20px; font-weight: 500;">Nuevo empleado</h3>
 
-                <mat-form-field appearance="outline">
-                    <mat-label>Nombre</mat-label>
-                    <input matInput formControlName="nombre">
-                </mat-form-field>
+</form>
 
-                <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput type="email" formControlName="email">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Contraseña</mat-label>
-                    <input matInput type="password" formControlName="password">
-                </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Fecha de alta</mat-label>
-                    <input matInput [matDatepicker]="datepicker">
-                    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
-                    <mat-datepicker #datepicker>
-                      <mat-datepicker-actions>
-                        <button mat-button matDatepickerCancel>Cancelar</button>
-                        <button mat-raised-button color="primary" matDatepickerApply>Aceptar</button>
-                      </mat-datepicker-actions>
-                    </mat-datepicker>
-                  </mat-form-field>
-
-                <mat-form-field appearance="outline">
-                    <mat-label>Rol</mat-label>
-                    <mat-select formControlName="rol">
-                        <mat-option value="trabajador">Trabajador</mat-option>
-                        <mat-option value="cliente">Cliente</mat-option>
-                        <mat-option value="admin">Admin</mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-                <button mat-stroked-button [disabled]="FormularioRegistro.invalid" (click)="AddEmpleado()">Añadir Empleado 
-                    <mat-icon>person_add_alt</mat-icon>
-                </button>
-                <button mat-stroked-button style="margin-top: 10px; background-color: rgb(187, 57, 57);" [mat-dialog-close]>Cancelar</button>
-            </form>
-        </div>
-    </div>
+<div class="botones-form">
+  <button
+    mat-stroked-button
+    [disabled]="FormularioRegistro.invalid"
+    (click)="AddEmpleado()"
+  >
+    Añadir Empleado
+    <mat-icon>person_add_alt</mat-icon>
+  </button>
+  <button
+    mat-stroked-button
+    style="margin-top: 30px; background-color: rgb(187, 57, 57);margin-left: 20px;"
+    [mat-dialog-close]
+  >
+    Cancelar
+  </button>
+</div>
 </div>

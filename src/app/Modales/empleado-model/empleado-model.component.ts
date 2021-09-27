@@ -17,8 +17,9 @@ export class EmpleadoModelComponent implements OnInit {
   empleado: Empleado = new Empleado();
 
   fechaFormateada = ""
-  departamentos:Empleado[] = []
-  
+  departamentos: any = [];
+  nombreDepartamentos: any = [];
+
 
   constructor(private dialog: MatDialog, private EmpleadoService:EmpleadosService) { }
 
@@ -27,10 +28,16 @@ export class EmpleadoModelComponent implements OnInit {
 
 
     this.EmpleadoService.ObtenerDepartamentos(this.empleado.id).subscribe(
-      resp => this.departamentos = resp
-      
+      resp => {this.departamentos = resp
+
+
+     for(let i in this.departamentos){
+          this.nombreDepartamentos.push(this.departamentos[i].nombre_dep)
+       }
+      }
     );
-    
+
+
   }
 
   AbrirDetalle(){
@@ -53,7 +60,7 @@ export class EmpleadoModelComponent implements OnInit {
       departamentos : this.departamentos
     }
     this.dialog.open(DetalleEmpleadoModelComponent, dialogConfig);
-    //console.log(palabra); 
+    //console.log(palabra);
   }
 
 }

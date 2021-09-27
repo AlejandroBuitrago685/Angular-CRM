@@ -1,35 +1,18 @@
-#caja-horizontal-logreg{
-    width: fill;
-    height: fill;
+.contenedor{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-#caja-vertical-logreg{
-    width: fit-content;
-    height: fill;
-    display: flex;
-    justify-content: flex-start;
-}
-
-#caja-formulario-logreg{
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    margin: 50px;
-    padding:20px;
-    border-radius: 5px;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 20px;
     background-color: white;
+    text-align: center;
 }
 
 .formulario{
     display: flex;
-    flex-direction: column;
-    padding-top:20px;
 }
-.formulario button{
-    height: 60px;
-    border:2px solid;
+
+.titulo-form{
+margin-left: 50%;
 }
 
 ::ng-deep.mat-dialog-container {
@@ -37,5 +20,22 @@
     box-shadow: none;
   }
 
+.caja1{
+    display: flex;
+    height: auto;
+    flex-direction: column;
 
+}
+.caja2{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+
+.botones-form{
+  text-align: center;
+  margin-bottom: 10px;
+
+}
 

@@ -123,6 +123,38 @@ rutas.get("/empleados/all", function (req, res) {
     })
 });
 
+//Obtener empleados pidiendo un departamento o varios departamentos
+rutas.get("/empleados/departamentos/:id", function (req, res) {
+  const id = req.params.id;
+  let consulta = `SELECT nombre,apellidos FROM empleados WHERE departamentos_id=(SELECT id_empleado from empl_dep WHERE id_departamento='${id}')`;
+  conexion.query(consulta, (err, rows, fields) => {
+
+      if (err) {
+          throw err;
+      }
+      else {
+          res.json(rows)
+      }
+
+  })
+});
+
+//Obtener nombre departamentos de un empleado
+rutas.get("/empleados/departamentos_nombre/:id", function (req, res) {
+  const id = req.params.id;
+  let consulta = `SELECT nombre_dep FROM departamentos WHERE id IN (SELECT id_departamento from empl_dep WHERE id_empleado='${id}')`;
+  conexion.query(consulta, (err, rows, fields) => {
+
+      if (err) {
+          throw err;
+      }
+      else {
+          res.json(rows)
+      }
+
+  })
+});
+
 //Añadir empleado
 rutas.post("/empleados/add", (req, res) => {
     const { nombre, apellidos, email, telefono, dni, fecha_alta, calle, localidad, cp, provincia, departamentos } = req.body;
@@ -170,7 +202,7 @@ rutas.put("/empleados/modify/:id", (req, res) => {
   localidad='${localidad}',
   cp='${cp}',
   provincia='${provincia}',
-  departamentos='${departamentos}' where id = '${id}'
+  departamentos_id='${departamentos}' where id = '${id}'
   `;
 
 
@@ -190,7 +222,7 @@ rutas.put("/empleados/modify/:id", (req, res) => {
 //Obtener departamentos de empleados
 rutas.get("/empleados/departamentos/:id", function (req, res) {
     const { id } = req.params;
-    let consulta = `select departamentos from empleados where id = '${id}' `;
+    let consulta = `select departamentos_id from empleados where id = '${id}' `;
     conexion.query(consulta, [id] , (err, rows, fields) => {
 
         if (err) {
