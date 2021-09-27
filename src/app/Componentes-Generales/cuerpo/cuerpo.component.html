@@ -1,4 +1,9 @@
 <div id="caja-cuerpo">
+
+    <app-encabezado></app-encabezado>
+
+    <mat-divider style="margin:0px 10px;"></mat-divider>
+
     <div [ngSwitch]="Ruta">
         <!-- the same view can be shown in more than one case -->
         <app-dashboard *ngSwitchCase="'/dashboard'"></app-dashboard>

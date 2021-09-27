@@ -23,7 +23,8 @@ export class EmpleadosComponent implements OnInit {
   ListaEmpleados:Empleado[] = [];
   public page:number;
 
-  constructor(private dialog: MatDialog,private router: Router, private userservice: UsersService, private empleadosService:EmpleadosService) {}
+  constructor(private router: Router, private userservice: UsersService, private empleadosService:EmpleadosService) {
+  }
 
 
   ngOnInit(): void {
@@ -55,13 +56,5 @@ export class EmpleadosComponent implements OnInit {
     })
 
   }
-
-  AbrirRegistro(){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = false;
-    dialogConfig.autoFocus = true;
-    this.dialog.open(RegistroEmpleadosModalComponent, dialogConfig);
-  }
-
 
 }

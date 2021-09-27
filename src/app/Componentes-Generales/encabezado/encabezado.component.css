@@ -2,4 +2,64 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
+
+#caja-ruta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: fill;
+    width:fill;
+    margin-right:5px;
+}
+
+.label-ruta{
+    font-size: 22px;
+    padding:0px 20px;
+    height: fill;
+}
+.boton-ruta{
+    height: fill;
+}
+
+
+
+
+
+/* notificaciones */
+
+
+.caja-notificacion{
+    margin:0px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: stretch;
+}
+.caja-notificacion *{
+    cursor: pointer;
+}
+
+.logo-notificacion{
+    margin-right:10px;
+}
+
+.texto-notificacion{
+    width: fill;
+}
+
+.eliminar-notificacion{
+    justify-self:end;
+}
+
+
+mat-divider{
+    margin:0px 10px;
+}
+
+

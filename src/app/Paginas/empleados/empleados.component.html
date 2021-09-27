@@ -1,10 +1,4 @@
-<div>
-  <div class="opciones-empleados">
-    <button mat-stroked-button (click)="AbrirRegistro()">
-      <mat-icon>person_add_alt</mat-icon><label> Nuevo empleado</label>
-    </button>
-  </div>
-</div>
+
 <div id="caja-empleados" >
   <div *ngFor="let empleados of ListaEmpleados | paginate: { itemsPerPage: 10, currentPage: page } ">
     <app-empleado-model [empleado]="empleados" ></app-empleado-model>

@@ -39,6 +39,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DetalleEmpleadoModelComponent } from './Modales/detalle-empleado-model/detalle-empleado-model.component';
+import { BtnAnadirEmpleadoComponent } from './Componentes-Generales/botones/btn-anadir-empleado/btn-anadir-empleado.component';
+import {MatMenu, MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { DetalleEmpleadoModelComponent } from './Modales/detalle-empleado-model/
      CuerpoComponent,
      RaizComponent,
      EmpleadoModelComponent,
-     DetalleEmpleadoModelComponent
+     DetalleEmpleadoModelComponent,
+     BtnAnadirEmpleadoComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,8 @@ import { DetalleEmpleadoModelComponent } from './Modales/detalle-empleado-model/
     MatChipsModule,
     MatTooltipModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatMenuModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: InterceptorPrincipal, multi: true},
     {provide: ErrorHandler, useClass: GlobalErrorService}],

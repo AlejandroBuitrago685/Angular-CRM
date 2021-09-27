@@ -1,11 +1,48 @@
 <div id="encabezado" >
-    <button mat-icon-button>
-        <mat-icon>menu</mat-icon>
-    </button>
+    <div [ngSwitch]="Ruta"  id="caja-ruta">
+        
+        <label *ngSwitchCase="'/dashboard'" class="label-ruta">Resumen</label>
+
+            <label *ngSwitchCase="'/empleados'" class="label-ruta">Empleados</label>
+            <app-btn-anadir-empleado *ngSwitchCase="'/empleados'" class="boton-ruta"></app-btn-anadir-empleado>
+        
+
+        <p *ngSwitchDefault>No Existe</p>
+
+    </div>
     
-    <button id="boton-notificacion" mat-icon-button >
+    <button id="boton-notificacion" [matMenuTriggerFor]="menuNotificaciones" mat-icon-button #tooltip="matTooltip" matTooltip="Notificaciones" matTooltipPosition="below">
         <mat-icon matBadge="3" matBadgeColor="warn"> notifications</mat-icon>
     </button>
+    
+    <mat-menu #menuNotificaciones="matMenu" id="caja-notificaciones">
+    
+        <div class="caja-notificacion" >
+            <button mat-button (click)="escribe('notificacion HAHA')">
+                <mat-icon class="logo-notificacion">person_remove</mat-icon>
+    
+                <label class="texto-notificacion">Se ha eliminado a Daniel</label>
+            </button>
+            <button mat-icon-button class="eliminar-notificacion" (click)="escribe('notificacion cerrar')">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="caja-notificacion" >
+            <button mat-button (click)="escribe('notificacion HAHA')">
+                <mat-icon class="logo-notificacion">person_add_alt_1</mat-icon>
+    
+                <label class="texto-notificacion">Se ha añadido a Ana</label>
+            </button>
+            <button mat-icon-button class="eliminar-notificacion" (click)="escribe('notificacion cerrar')">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        
+
+    </mat-menu>
 
 
 </div>
